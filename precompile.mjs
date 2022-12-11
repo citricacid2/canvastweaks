@@ -1,4 +1,5 @@
 import { OpenAIApi, Configuration } from "openai";
+const QRCode = require("qrcode");
 
 const config = new Configuration({
   apiKey: "API_KEY",
@@ -29,10 +30,6 @@ async function main(assignment) {
   responseElement.textContent = response.data.choices[0].text;
 }
 
-const qrcodejsScript = document.createElement("script");
-qrcodejsScript.src =
-  "https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js";
-
 const button = document.createElement("button");
 button.textContent = "Generate an example solution with GPT-3";
 button.classList.add("gpt-button");
@@ -42,8 +39,12 @@ button.addEventListener("click", () => {
   );
 });
 
-const qrcode = document.createElement("div");
-qrcode.id = "qrcode";
+const canvas = document.createElement("canvas");
+canvas.id = "qrcode";
+QRCode.toCanvas(canvas, window.location, function (error) {
+  if (error) console.error(error);
+  console.log("success!");
+});
 
 setTimeout(function () {
   // alert("It's loaded!");
@@ -51,7 +52,7 @@ setTimeout(function () {
     "a2-toggle-details-container"
   )[0];
 
-  element.appendChild(qrcodejsScript);
-  element.appendChild(qrcode);
+  element.appendChild(canvas);
+
   element.appendChild(button);
 }, 2000);

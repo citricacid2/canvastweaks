@@ -1,5 +1,7 @@
 # Canvas Tweaks
 
+Add your GPT API key to the `api_key` variable in `content.js` to enable GPT-3 integration.
+
 ## Description
 
 Canvas is a popular learning management system (LMS) used by many schools and institutions. It provides a platform for teachers to create and manage their course content, and for students to access and submit assignments and track their progress.
