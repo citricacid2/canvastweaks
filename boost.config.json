@@ -1,0 +1,1 @@
+{"pinned":false,"id":"886cf94d-acf9-4536-a8a0-301f46f13d1d","scope":"ncssm.instructure.com","installedInProfiles":[{"default":{}}],"extensionId":"illjhopjadjpapildkncklnnkldknmkf","components":{"contentScript":{"path":"content.js","enabled":true},"contentStylesheet":{"path":"styles.css","enabled":true}},"extensionEnabled":true,"name":"Canvas Tweaks"}
